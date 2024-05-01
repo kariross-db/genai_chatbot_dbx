@@ -78,7 +78,7 @@
 index_name=f"{catalog}.{db}.databricks_documentation_vs_index"
 host = "https://" + spark.conf.get("spark.databricks.workspaceUrl")
 
-test_demo_permissions(host, secret_scope="dbdemos", secret_key="rag_sp_token", vs_endpoint_name=VECTOR_SEARCH_ENDPOINT_NAME, index_name=index_name, embedding_endpoint_name="databricks-bge-large-en")
+test_demo_permissions(host, secret_scope="dbdemos", secret_key="klr_rag_sp_token", vs_endpoint_name=VECTOR_SEARCH_ENDPOINT_NAME, index_name=index_name, embedding_endpoint_name="databricks-bge-large-en")
 
 # COMMAND ----------
 
@@ -101,7 +101,7 @@ test_demo_permissions(host, secret_scope="dbdemos", secret_key="rag_sp_token", v
 # DBTITLE 1,Setup authentication for our model
 # url used to send the request to your model from the serverless endpoint
 host = "https://" + spark.conf.get("spark.databricks.workspaceUrl")
-os.environ['DATABRICKS_TOKEN'] = dbutils.secrets.get("dbdemos", "rag_sp_token")
+os.environ['DATABRICKS_TOKEN'] = dbutils.secrets.get("dbdemos", "klr_rag_sp_token")
 
 # COMMAND ----------
 
