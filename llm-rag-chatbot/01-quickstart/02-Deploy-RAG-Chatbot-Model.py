@@ -2,7 +2,7 @@
 # MAGIC %md-sandbox
 # MAGIC # 2/ Creating the chatbot with Retrieval Augmented Generation (RAG) and DBRX Instruct
 # MAGIC
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/llm-rag-managed-flow-2.png?raw=true" style="float: right; margin-left: 10px"  width="900px;">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/llm-rag-managed-flow-2.png?raw=true"  width="900px;">
 # MAGIC
 # MAGIC Our Vector Search Index is now ready!
 # MAGIC
@@ -85,7 +85,7 @@ test_demo_permissions(host, secret_scope="dbdemos", secret_key="rag_sp_token", v
 # MAGIC %md-sandbox
 # MAGIC ### Langchain retriever
 # MAGIC
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/llm-rag-managed-model-1.png?raw=true" style="float: right" width="500px">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/llm-rag-managed-model-1.png?raw=true" width="500px">
 # MAGIC
 # MAGIC Let's start by building our Langchain retriever. 
 # MAGIC
@@ -141,7 +141,7 @@ print(f"Relevant documents: {similar_documents[0]}")
 # MAGIC %md-sandbox
 # MAGIC ### Building Databricks Chat Model to query Databricks DBRX Instruct foundation model
 # MAGIC
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/llm-rag-managed-model-3.png?raw=true" style="float: right" width="500px">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/llm-rag-managed-model-3.png?raw=true"  width="500px">
 # MAGIC
 # MAGIC Our chatbot will be using Databricks DBRX Instruct foundation model to provide answer.  DBRX Instruct is a general-purpose LLM, built to develop enterprise grade GenAI applications, unlocking your use-cases with capabilities that were previously limited to closed model APIs.
 # MAGIC

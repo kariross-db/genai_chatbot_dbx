@@ -5,7 +5,7 @@
 # MAGIC
 # MAGIC ## Building and indexing our knowledge base into Databricks Vector Search
 # MAGIC
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/llm-rag-managed-flow-1.png?raw=true" style="float: right; width: 800px; margin-left: 10px">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/llm-rag-managed-flow-1.png?raw=true" style="width: 800px; margin-left: 10px">
 # MAGIC
 # MAGIC In this notebook, we'll ingest our documentation pages and index them with a Vector Search index to help our chatbot provide better answers.
 # MAGIC
@@ -45,7 +45,7 @@
 # MAGIC %md-sandbox
 # MAGIC ## Extracting Databricks documentation sitemap and pages
 # MAGIC
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/llm-rag-data-prep-1.png?raw=true" style="float: right; width: 600px; margin-left: 10px">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/llm-rag-data-prep-1.png?raw=true" style="width: 600px; margin-left: 10px">
 # MAGIC
 # MAGIC First, let's create our raw dataset as a Delta Lake table.
 # MAGIC
@@ -74,7 +74,7 @@ display(spark.table("raw_documentation").limit(2))
 # MAGIC
 # MAGIC ### Splitting documentation pages into small chunks
 # MAGIC
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/llm-rag-data-prep-2.png?raw=true" style="float: right; width: 600px; margin-left: 10px">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/llm-rag-data-prep-2.png?raw=true" style="width: 600px; margin-left: 10px">
 # MAGIC
 # MAGIC LLM models typically have a maximum input context length, and you won't be able to compute embeddings for very long texts.
 # MAGIC In addition, the longer your context length is, the longer it will take for the model to provide a response.
@@ -93,7 +93,7 @@ display(spark.table("raw_documentation").limit(2))
 # MAGIC %md-sandbox
 # MAGIC ### Splitting our big documentation pages in smaller chunks (h2 sections)
 # MAGIC
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/chunk-window-size.png?raw=true" style="float: right" width="700px">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/chunk-window-size.png?raw=true" width="700px">
 # MAGIC <br/>
 # MAGIC In this demo, we have big documentation articles, which are too long for the prompt to our model. 
 # MAGIC
@@ -192,7 +192,7 @@ display(spark.table("databricks_documentation"))
 # MAGIC %md-sandbox
 # MAGIC ## What's required for our Vector Search Index
 # MAGIC
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/databricks-vector-search-managed-type.png?raw=true" style="float: right" width="800px">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/databricks-vector-search-managed-type.png?raw=true"  width="800px">
 # MAGIC
 # MAGIC Databricks provides multiple types of vector search indexes:
 # MAGIC
@@ -239,7 +239,7 @@ print(embeddings)
 # MAGIC %md-sandbox
 # MAGIC ### Creating our Vector Search Index with Managed Embeddings and BGE
 # MAGIC
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/llm-rag-data-prep-3.png?raw=true" style="float: right; width: 600px; margin-left: 10px">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/llm-rag-data-prep-3.png?raw=true" width: 600px; margin-left: 10px">
 # MAGIC
 # MAGIC With Managed embeddings, Databricks will automatically compte the embeddings for us. This is the easier mode to get started with Databricks.
 # MAGIC
@@ -266,7 +266,7 @@ print(f"Endpoint named {VECTOR_SEARCH_ENDPOINT_NAME} is ready.")
 
 # MAGIC %md-sandbox
 # MAGIC
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/index_creation.gif?raw=true" width="600px" style="float: right">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/index_creation.gif?raw=true" width="600px" >
 # MAGIC
 # MAGIC You can view your endpoint on the [Vector Search Endpoints UI](#/setting/clusters/vector-search). Click on the endpoint name to see all indexes that are served by the endpoint.
 # MAGIC
