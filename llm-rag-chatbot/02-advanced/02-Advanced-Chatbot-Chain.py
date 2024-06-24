@@ -2,7 +2,7 @@
 # MAGIC %md-sandbox
 # MAGIC # 2/ Advanced chatbot with message history and filter using Langchain and DBRX Instruct
 # MAGIC
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/llm-rag-self-managed-flow-2.png?raw=true" style="float: right; margin-left: 10px"  width="900px;">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/llm-rag-self-managed-flow-2.png?raw=true" style="float: right; margin-left: 10px"  width="600px;">
 # MAGIC
 # MAGIC Our Vector Search Index is now ready!
 # MAGIC

@@ -5,7 +5,7 @@
 # MAGIC
 # MAGIC ## In this example, we will focus on ingesting pdf documents as source for our retrieval process. 
 # MAGIC
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/rag-pdf-self-managed-0.png?raw=true" style="float: right; width: 600px; margin-left: 10px">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/rag-pdf-self-managed-0.png?raw=true" width= "600px">
 # MAGIC
 # MAGIC
 # MAGIC For this example, we will add Databricks ebook PDFs from [Databricks resources page](https://www.databricks.com/resources) to our knowledge database.
@@ -35,6 +35,10 @@
 
 # COMMAND ----------
 
+# MAGIC %pip install unstructured[pdf,docx]==00.10.30
+
+# COMMAND ----------
+
 # DBTITLE 1,Install required external libraries 
 # MAGIC %pip install transformers==4.30.2 "unstructured[pdf,docx]==0.10.30" langchain==0.1.5 llama-index==0.9.3 databricks-vectorsearch==0.22 pydantic==1.10.9 mlflow==2.10.1
 # MAGIC dbutils.library.restartPython()
@@ -48,7 +52,7 @@
 # MAGIC %md-sandbox
 # MAGIC ## Ingesting Databricks ebook PDFs and extracting their pages
 # MAGIC
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/rag-pdf-self-managed-1.png?raw=true" style="float: right" width="500px">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/rag-pdf-self-managed-1.png?raw=true" width="500px">
 # MAGIC
 # MAGIC First, let's ingest our PDFs as a Delta Lake table with path urls and content in binary format. 
 # MAGIC
@@ -92,7 +96,7 @@ df = (spark.readStream
 # COMMAND ----------
 
 # MAGIC %md-sandbox
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/rag-pdf-self-managed-2.png?raw=true" style="float: right" width="500px">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/rag-pdf-self-managed-2.png?raw=true" width="500px">
 # MAGIC
 # MAGIC ## Extracting our PDF content as text chunks
 # MAGIC
@@ -202,7 +206,7 @@ def read_as_chunk(batch_iter: Iterator[pd.Series]) -> Iterator[pd.Series]:
 # MAGIC %md-sandbox
 # MAGIC ## What's required for our Vector Search Index
 # MAGIC
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/databricks-vector-search-type.png?raw=true" style="float: right" width="800px">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/databricks-vector-search-type.png?raw=true" style="float: right" width="600px">
 # MAGIC
 # MAGIC Databricks provide multiple types of vector search indexes:
 # MAGIC
@@ -219,7 +223,7 @@ def read_as_chunk(batch_iter: Iterator[pd.Series]) -> Iterator[pd.Series]:
 # MAGIC %md-sandbox
 # MAGIC ## Introducing Databricks BGE Embeddings Foundation Model endpoints
 # MAGIC
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/rag-pdf-self-managed-4.png?raw=true" style="float: right; width: 600px; margin-left: 10px">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/rag-pdf-self-managed-4.png?raw=true" style="width: 600px; margin-left: 10px">
 # MAGIC
 # MAGIC Foundation Models are provided by Databricks, and can be used out-of-the-box.
 # MAGIC
@@ -321,7 +325,7 @@ if table_exists(f'{catalog}.{db}.databricks_documentation'):
 # MAGIC
 # MAGIC ### Our dataset is now ready! Let's create our Self-Managed Vector Search Index.
 # MAGIC
-# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/rag-pdf-self-managed-3.png?raw=true" style="float: right; width: 600px; margin-left: 10px">
+# MAGIC <img src="https://github.com/databricks-demos/dbdemos-resources/blob/main/images/product/chatbot-rag/rag-pdf-self-managed-3.png?raw=true" style="width: 600px; margin-left: 10px">
 # MAGIC
 # MAGIC Our dataset is now ready. We chunked the documentation pages into small sections, computed the embeddings and saved it as a Delta Lake table.
 # MAGIC
